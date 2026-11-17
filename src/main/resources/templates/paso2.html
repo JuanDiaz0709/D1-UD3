@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Paso 2 - Cámara</title>
+</head>
+<body>
+    <h2>Paso 2: Configuración POV</h2>
+
+    <p style="color: red;" th:if="${error != null}" th:text="${error}"></p>
+
+    <form method="post" action="/paso2">
+        <label>Tipo de montura:</label><br>
+        <input type="radio" name="montura" value="Arnés de Pecho" th:checked="${montura == 'Arnés de Pecho'}"> Arnés de Pecho<br>
+        <input type="radio" name="montura" value="Cinta de Cabeza" th:checked="${montura == 'Cinta de Cabeza'}"> Cinta de Cabeza<br><br>
+
+        <label>Resolución de grabación:</label><br>
+        <select name="resolucion">
+            <option value="">Selecciona...</option>
+            <option value="1080p 60fps" th:selected="${resolucion == '1080p 60fps'}">1080p 60fps (Estándar)</option>
+            <option value="4K 30fps" th:selected="${resolucion == '4K 30fps'}">4K 30fps (Alta Calidad)</option>
+        </select><br><br>
+
+        <a href="/paso1">Atrás</a>
+        <button type="submit">Siguiente</button>
+    </form>
+</body>
+</html>

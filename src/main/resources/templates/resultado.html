@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado final</title>
+</head>
+<body>
+    <h2>Resumen de tu configuración</h2>
+
+    <ol>
+        <li th:each="dato : ${datos}" th:text="${dato}"></li>
+    </ol>
+
+    <a href="/paso3">Atrás</a>
+    <a href="/">Crear nueva configuración</a>
+</body>
+</html>

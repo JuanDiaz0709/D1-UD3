@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Paso 3 - Accesorios</title>
+</head>
+<body>
+    <h2>Paso 3: Equipamiento adicional</h2>
+
+    <form method="post" action="/paso3">
+        <label>Selecciona accesorios (opcional):</label><br>
+        <input type="checkbox" name="accesorios" value="Batería Extra"
+               th:checked="${accesorios != null and #lists.contains(accesorios, 'Batería Extra')}"> Batería Extra<br>
+        <input type="checkbox" name="accesorios" value="Tarjeta MicroSD 128GB"
+               th:checked="${accesorios != null and #lists.contains(accesorios, 'Tarjeta MicroSD 128GB')}"> Tarjeta MicroSD 128GB<br>
+        <input type="checkbox" name="accesorios" value="Funda Protectora"
+               th:checked="${accesorios != null and #lists.contains(accesorios, 'Funda Protectora')}"> Funda Protectora Anti-golpes<br><br>
+
+        <a href="/paso2">Atrás</a>
+        <button type="submit">Finalizar resumen</button>
+    </form>
+</body>
+</html>

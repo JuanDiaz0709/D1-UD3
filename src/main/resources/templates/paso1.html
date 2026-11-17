@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Paso 1 - Perfil deportivo</title>
+</head>
+<body>
+    <h2>Paso 1: Perfil deportivo</h2>
+
+    <p style="color: red;" th:if="${error != null}" th:text="${error}"></p>
+
+    <form method="post" action="/paso1">
+        <label>Nombre:</label><br>
+        <input type="text" name="jugador" th:value="${jugador}"><br><br>
+
+        <label>Posición en el campo:</label><br>
+        <select name="posicion">
+            <option value="">Selecciona...</option>
+            <option value="Defensa" th:selected="${posicion == 'Defensa'}">Defensa</option>
+            <option value="Medio" th:selected="${posicion == 'Medio'}">Medio</option>
+            <option value="Delantero" th:selected="${posicion == 'Delantero'}">Delantero</option>
+        </select><br><br>
+
+        <label>Nivel de juego:</label><br>
+        <input type="radio" name="nivel" value="Amateur" th:checked="${nivel == 'Amateur'}"> Amateur<br>
+        <input type="radio" name="nivel" value="Semiprofesional" th:checked="${nivel == 'Semiprofesional'}"> Semiprofesional<br><br>
+
+        <button type="submit">Siguiente</button>
+    </form>
+</body>
+</html>
